@@ -19,6 +19,24 @@ namespace XFMasterDetailDemo
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
+            button2.Clicked += (sender, args) =>
+            {
+                var masterDetailPage = Application.Current.MainPage as MasterDetailPage;
+                if (masterDetailPage != null)
+                {
+                    masterDetailPage.Detail = new NavigationPage(new ListViewWithGrid());
+                }
+            };
+
+            button1.Clicked += (sender, args) =>
+            {
+                var masterDetailPage = Application.Current.MainPage as MasterDetailPage;
+                if (masterDetailPage != null)
+                {
+                    masterDetailPage.Detail = new NavigationPage(new HomePage());
+                }
+            };
+
             Content = new StackLayout
             {
                 Children =
